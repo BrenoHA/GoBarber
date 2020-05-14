@@ -8,7 +8,7 @@ class User extends Model {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
-        //VIRTUAL quer dizer que não vai pra base de dados
+        // VIRTUAL quer dizer que não vai pra base de dados
         password_hash: Sequelize.STRING,
         provider: Sequelize.BOOLEAN,
       },
@@ -29,7 +29,6 @@ class User extends Model {
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }
-
 }
 
 export default User;
